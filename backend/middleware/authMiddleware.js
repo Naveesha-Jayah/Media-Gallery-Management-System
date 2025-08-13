@@ -25,24 +25,9 @@ exports.protect = async (req, res, next) => {
   }
 };
 
-// Verify OTP
-exports.verifyOTP = async (req, res, next) => {
-  const { email, otp } = req.body;
-
-  try {
-    const user = await User.findOne({ 
-      email,
-      otp,
-      otpExpires: { $gt: Date.now() }
-    });
-
-    if (!user) {
-      return res.status(400).json({ message: 'Invalid or expired OTP' });
-    }
-
-    req.user = user;
-    next();
-  } catch (error) {
-    res.status(500).json({ message: error.message });
+exports.adminOnly = (req, res, next) => {
+  if (!req.user || req.user.role !== 'admin') {
+    return res.status(403).json({ message: 'Forbidden' });
   }
+  next();
 };

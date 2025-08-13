@@ -23,14 +23,17 @@ const userSchema = new mongoose.Schema({
   },
   isVerified: {
     type: Boolean,
-    default: false
+    default: true
   },
-  otp: {
-    type: String
+  role: {
+    type: String,
+    enum: ['user', 'admin'],
+    default: 'user'
   },
-  otpExpires: {
-    type: Date
-  }
+  isActive: {
+    type: Boolean,
+    default: true
+  },
 }, {
   timestamps: true
 });
