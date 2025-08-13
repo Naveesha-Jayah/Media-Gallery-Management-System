@@ -46,3 +46,26 @@ It allows users to upload, organize, view, and manage their media in a modern, r
 
 ## 📂 Folder Structure
 
+Media-Gallery-Management-System/
+│
+├── backend/ # Express server
+│ ├── config/ # DB & environment configs
+│ ├── controllers/ # API request handlers
+│ ├── models/ # Mongoose schemas
+│ ├── routes/ # API endpoints
+│ ├── uploads/ # Uploaded media storage
+│ └── server.js # Main server file
+│
+├── frontend/ # React client
+│ ├── public/
+│ ├── src/
+│ │ ├── components/ # Reusable UI components
+│ │ ├── pages/ # Page views
+│ │ ├── services/ # API calls
+│ │ ├── App.js
+│ │ └── index.js
+│
+└── README.md
+
+
+
