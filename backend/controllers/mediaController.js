@@ -332,7 +332,7 @@ exports.removeMultiple = async (req, res) => {
 		});
 	} catch (e) {
 		res.status(500).json({ message: e.message });
-	};
+	}
 };
 
 // Hard delete media item (permanent removal)

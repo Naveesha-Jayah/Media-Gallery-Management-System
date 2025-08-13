@@ -21,7 +21,7 @@ const mediaItemSchema = new mongoose.Schema({
 	deletedAt: { type: Date },
 	downloadCount: { type: Number, default: 0 },
 	viewCount: { type: Number, default: 0 },
-	rating: { type: Number, min: 1, max: 5, default: 0 },
+	rating: { type: Number, min: 1, max: 5, default: 1 },
 	favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
 }, { 
 	timestamps: true,
