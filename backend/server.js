@@ -37,5 +37,12 @@ app.use('/api', require('./routes/mediaRoutes'));
 app.use('/api/admin', require('./routes/adminRoutes'));
 app.use('/uploads', express.static(require('path').join(__dirname, 'uploads')));
 
+// Debug: Log all routes
+console.log('🔍 Loaded routes:');
+console.log('   /auth/* - Authentication routes');
+console.log('   /user/* - User routes');
+console.log('   /api/* - API routes');
+console.log('   /uploads/* - File uploads');
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

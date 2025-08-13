@@ -45,7 +45,26 @@ export function AuthProvider({ children }) {
 		localStorage.removeItem('auth');
 	};
 
-	const value = useMemo(() => ({ user, token, loading, login, logout }), [user, token, loading]);
+	// Check if user is admin
+	const isAdmin = () => {
+		return user?.role === 'admin';
+	};
+
+	// Check if user has specific role
+	const hasRole = (role) => {
+		return user?.role === role;
+	};
+
+	const value = useMemo(() => ({ 
+		user, 
+		token, 
+		loading, 
+		login, 
+		logout,
+		isAdmin,
+		hasRole
+	}), [user, token, loading]);
+
 	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 

@@ -42,7 +42,16 @@ export default function RegisterPage() {
 				{error && <div className="text-sm text-red-600">{error}</div>}
 				<button type="submit" disabled={loading} className="w-full rounded-md bg-slate-900 text-white px-4 py-2 hover:bg-slate-800 disabled:opacity-50">{loading ? 'Creating account...' : 'Sign up'}</button>
 			</form>
-			<p className="mt-4 text-sm text-slate-600">Already have an account? <Link to="/login" className="text-slate-900 underline">Sign in</Link></p>
+			<div className="mt-6 text-center">
+				<p className="text-sm text-slate-600">
+					Already have an account?{' '}
+					<Link to="/login" className="text-slate-900 underline">Sign in</Link>
+				</p>
+				<p className="text-sm text-slate-600 mt-2">
+					Need admin access?{' '}
+					<Link to="/admin-register" className="text-slate-900 underline">Register as Admin</Link>
+				</p>
+			</div>
 		</div>
 	);
 } 
